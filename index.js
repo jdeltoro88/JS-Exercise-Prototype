@@ -76,10 +76,10 @@ function Baby() {
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. window/ global object binding
+  2. imlicit binding
+  3. new binding
+  4. explicit binding
 */
 
 
