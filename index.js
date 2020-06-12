@@ -122,7 +122,7 @@ Car.prototype.drive = function(distance) {
 */
 function Baby(name, age, favoriteToy) {
   Person.call(this, name, age);
-  this.favoriteToy = "cars";
+  this.favoriteToy = "trains";
 
 }
 
