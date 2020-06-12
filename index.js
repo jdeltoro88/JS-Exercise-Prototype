@@ -59,6 +59,17 @@ Person.prototype.eat = function(someFood) {
   }
   return stomach;
   };
+  
+  Person.prototype.poop = function () {
+    return stomach.splice(0, stomach.length);
+
+  };
+
+  Person.prototype.toString = function() {
+    return `${this.name}, ${this.age}`;
+  };
+
+
 
 
 /*
@@ -100,7 +111,7 @@ Car.prototype.drive = function(distance) {
     this.tank = 0;
     return `I ran out of fuel at ${this.odometer} miles!`
   }
-}
+};
 
 /*
   TASK 3
