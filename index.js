@@ -39,9 +39,27 @@ Airplane.prototype.land = function () {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
+function Person(name, age) {
+  this.name = name;
+  this.age = age; 
+  this.stomach = stomach;
+  this.canEatNoMoreThan10Foods = true;
+  this.canEatMoreThan10Foods = false;
 
 }
+
+let stomach = [];
+
+Person.prototype.eat = function(someFood) {
+  for (let i = 0; i <= 10; i++) {
+    stomach.push(1,2,3,4,5,6,7,8,9,10);
+  } 
+  if (someFood <= 1){
+    return true;
+  }
+  return stomach;
+  };
+
 
 /*
   TASK 2
@@ -57,8 +75,31 @@ function Person() {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
+function Car(model, milesPerGallon) {
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
 
+}
+
+Car.prototype.fill = function (gallons) {
+  return this.tank += gallons;
+
+}
+
+Car.prototype.fill = function(gallons) {
+  return this.tank += gallons;
+
+}
+Car.prototype.drive = function(distance) {
+  this.odometer += distance;
+  this.tank = this.tank - (distance / this.milesPerGallon);
+  if (this.tank < 0) {
+    this.odometer += this.tank * this.milesPerGallon;
+    this.tank = 0;
+    return `I ran out of fuel at ${this.odometer} miles!`
+  }
 }
 
 /*
@@ -68,18 +109,36 @@ function Car() {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age);
+  this.favoriteToy = "trains";
 
 }
 
+Person.prototype.play = function() {
+  return (`playing with ${this.favoriteToy}`);
+}
+
+Baby.prototype = Object.create(Person.prototype);
 /* 
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
   1. window/ global object binding
+ 
+  in global scope the value of "this" will be the console object.
+
   2. imlicit binding
-  3. new binding
+
+    "this" object is defined before the period 
+  
+    3. new binding
+
+    whenever we use a constructor function
+
   4. explicit binding
+
+    when we use "call" or apply methods
 */
 
 
